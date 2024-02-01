@@ -1,3 +1,4 @@
+// 3. Определить, является ли число a делителем числа b ? И наоборот. (Дать два ответа)
 let a = +prompt('Write the first number', '');
 let b = +prompt('Write the second number', '');
 

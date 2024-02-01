@@ -1,3 +1,7 @@
+// 7.  Дано трехзначное число. 
+//     a. Верно ли, что все его цифры одинаковые? 
+//     b. Есть ли среди его цифр одинаковые?
+
 let digit = +prompt('Write the some Two-digit number ', '');
 
 let firstDigit = Math.floor(digit / 10 / 10);

@@ -1,3 +1,5 @@
+// 5. Дано двузначное число. Определить, какая из его цифр больше: первая или вторая?
+
 let digit = +prompt('Write the some Two-digit number ', '');
 let firstDigit = 0;
 let lastDigit = digit % 10;

@@ -1,3 +1,5 @@
+// 8. Определить, является ли заданное шестизначное число зеркальным? (123321, 147741)
+
 let digit = +prompt('Write the some Six-digit number ', '');
 
 let firstPartDigits = Math.floor(digit / 1000);
