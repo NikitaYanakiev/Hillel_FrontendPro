@@ -1,0 +1,19 @@
+#text {
+    display: inline-block;
+    padding: 5px;
+    font-size: 26px;
+    color:black;
+}
+
+.div-ghost {
+    display: inline-block;
+    visibility: hidden;
+    margin-left: 20px;
+    font-size: 26px;
+    padding: 5px;
+    background-color:lightblue;
+}
+
+.visible {
+    visibility: visible;
+}

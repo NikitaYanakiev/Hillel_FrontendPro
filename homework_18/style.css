@@ -1,0 +1,9 @@
+.table {
+    border: 1px solid black;
+}
+
+.element {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+}
