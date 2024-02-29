@@ -1,20 +1,12 @@
 'use strict';
 
-const images = document.querySelectorAll('.img');
-const btn = document.getElementById('btn');
+function showRandomImg(elementCount) {
+    let randomImg = Math.floor(Math.random() * elementCount) + 1;
 
-function showRandomImg() {
-    let randomNum = Math.floor(Math.random() * images.length) + 1;
-
-    images.forEach((item, i) => {
-        item.style.display = 'none';
-
-        if (i + 1 === randomNum) {
-            item.style.display = '';
-        }
-    })
+    const img = document.createElement('img');
+          img.setAttribute('src', `img/${randomImg}.jpg`);
+          img.setAttribute('alt', `image`);
+          document.body.append(img);
 }
 
-showRandomImg();
-
-btn.addEventListener('click', showRandomImg);
+showRandomImg(9);
