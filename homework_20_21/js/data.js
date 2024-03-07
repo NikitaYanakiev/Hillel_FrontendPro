@@ -54,3 +54,11 @@ const data = [
     ],
   },
 ];
+
+const ALL_CITIES = {
+  0: '',
+  1: 'Odessa',
+  2: 'Kiev',
+  3: 'Lviv',
+  4: 'Kharkiv'
+}
