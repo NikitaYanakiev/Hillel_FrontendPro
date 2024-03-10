@@ -24,7 +24,25 @@ document.getElementById('product').addEventListener('click', event => {
 });
 
 document.body.addEventListener('click', event => {
-    if (event.target.classList.contains('orderBtn'))  {
+    if (event.target.classList.contains('orderBtn')) {
         dataOrder = getDataOfForm();
+    }
+});
+
+document.getElementById('myOrder').addEventListener('click', () => {
+    clearInfo();
+    openOrderList();
+})
+
+document.getElementById('orders').addEventListener('click', (event) => {
+    if (event.target.parentElement.classList.contains('orders__item-body')) {
+        event.target.parentElement.nextElementSibling.classList.toggle('active')
+    }
+});
+
+document.getElementById('orders').addEventListener('click', (event) => {
+    if (event.target.classList.contains('remove')) {
+        const indexToDelete = event.target.getAttribute('data-remove');
+        deleteOrder(indexToDelete);
     }
 });

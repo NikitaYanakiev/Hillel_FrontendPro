@@ -62,3 +62,5 @@ const ALL_CITIES = {
   3: 'Lviv',
   4: 'Kharkiv'
 }
+ 
+let orderList = JSON.parse(localStorage.getItem('My orders')) || [];
