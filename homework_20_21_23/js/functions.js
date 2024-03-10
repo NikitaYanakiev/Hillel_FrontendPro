@@ -266,35 +266,37 @@ function makeOrdersList() {
     ordersWrapper.innerHTML = orderInfo;
 
     const list = document.querySelector('.orders__list');
-    myOrders.forEach((order, i) => {
-        let item = document.createElement('div');
-        item.classList.add('orders__item');
+    if (myOrders) {
+        myOrders.forEach((order, i) => {
+            let item = document.createElement('div');
+            item.classList.add('orders__item');
+    
+            let orderRow = `
+                        <div class="orders__item-body">
+                            <div class="item__orders-date">${order.date}</div>
+                            <div class="item__orders-totalprice">${order.totalPrice}$</div>
+                            <div class="item__orders-remove"><span class="remove" data-remove="${i}">X</span></div>
+                        </div>
+                        <div class="orders__item-info">
+                            <div class="orders__item-details"><span>Product name:</span> ${order.productName}</div>
+                            <div class="orders__item-details"><span>Product price:</span> ${order.productPrice}$</div>
+                            <div class="orders__item-details"><span>Full name:</span> ${order.name}</div>
+                            <div class="orders__item-details"><span>City:</span> ${ALL_CITIES[order.city]}</div>
+                            <div class="orders__item-details"><span>Post office:</span> ${order.post}</div>
+                            <div class="orders__item-details"><span>Payment:</span> ${order.payment}</div>
+                            <div class="orders__item-details"><span>Quantity of product:</span> ${order.count}</div>
+                            <div class="orders__item-details"><span>Total price:</span> ${order.totalPrice}$</div>
+                            <div class="orders__item-details"><span>Comment:</span> ${order.comment}</div>
+                        </div>
+                `;
+    
+            item.innerHTML = orderRow;
+            list.append(item);
+        });
+    }
 
-        let orderRow = `
-                    <div class="orders__item-body">
-                        <div class="item__orders-date">${order.date}</div>
-                        <div class="item__orders-totalprice">${order.totalPrice}$</div>
-                        <div class="item__orders-remove"><span class="remove" data-remove="${i}">X</span></div>
-                    </div>
-                    <div class="orders__item-info">
-                        <div class="orders__item-details"><span>Product name:</span> ${order.productName}</div>
-                        <div class="orders__item-details"><span>Product price:</span> ${order.productPrice}$</div>
-                        <div class="orders__item-details"><span>Full name:</span> ${order.name}</div>
-                        <div class="orders__item-details"><span>City:</span> ${ALL_CITIES[order.city]}</div>
-                        <div class="orders__item-details"><span>Post office:</span> ${order.post}</div>
-                        <div class="orders__item-details"><span>Payment:</span> ${order.payment}</div>
-                        <div class="orders__item-details"><span>Quantity of product:</span> ${order.count}</div>
-                        <div class="orders__item-details"><span>Total price:</span> ${order.totalPrice}$</div>
-                        <div class="orders__item-details"><span>Comment:</span> ${order.comment}</div>
-                    </div>
-            `;
-
-        item.innerHTML = orderRow;
-        list.append(item);
-    });
-
-    if (myOrders.length < 1) {
-        ordersWrapper.innerHTML = '<h1 class="orders_empty"> No orders :(</h1>';
+    if (!myOrders || myOrders.length < 1) {
+        ordersWrapper.innerHTML = '<h1 class="orders_empty"> No orders :( </h1>';
     }
 }
 
