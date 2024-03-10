@@ -116,7 +116,6 @@ function getDataOfForm() {
 
     if (validationForm(dataOrder)) {
         console.log(dataOrder);
-        console.log(dataOrder.date);
         showOrderInfo(dataOrder);
         addOrderInLocalStorage(dataOrder);
         return dataOrder;
