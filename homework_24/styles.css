@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#grid {
+  margin-top: 20px;
+}
+
+#view {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#form {
+  margin-top: 20px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="button"] {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add_btn,
+.save_btn {
+  background-color: #008cba;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add_btn:hover,
+.save_btn:hover {
+  background-color: #007299;
+}
+
+.user_row {
+  margin-top: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.user_row:last-child {
+  border-bottom: none;
+}
+
+.user_buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.user_buttons input[type="button"] {
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.user_buttons input[type="button"]:hover {
+  background-color: #f57c00;
+}
+
+.error {
+  border: 2px solid red !important;
+}
+
+.empty {
+  font-size: 24px;
+  color: rgb(102, 102, 102);
+  text-align: center;
+  font-weight: bold;
+}
+
+.view_modal {
+  position: relative;
+}
+
+.view_close {
+  position: absolute; 
+  right: 0;
+  top: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+}
+
+.view_close:hover {
+  background-color: rgb(209, 3, 3);
+}
