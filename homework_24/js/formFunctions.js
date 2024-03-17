@@ -44,35 +44,15 @@ function addUser() {
 }
 
 function validationForm(formData) {
-    for (const key in formData) {
-        if (key === 'name' && formData[key] === '') {
-            document.getElementById('name').classList.add('error');
-            return false;
-        } else if (key === 'name' && formData[key] !== '') {
-            document.getElementById('name').classList.remove('error');
-        }
-
-        if (key === 'login' && formData[key] === '') {
-            document.getElementById('login').classList.add('error');
-            return false;
-        } else if (key === 'login' && formData[key] !== '') {
-            document.getElementById('login').classList.remove('error');
-        }
-
-        if (key === 'email' && formData[key] === '') {
-            document.getElementById('email').classList.add('error');
-            return false;
-        } else if (key === 'email' && formData[key] !== '') {
-            document.getElementById('email').classList.remove('error');
-        }
-
-        if (key === 'age' && formData[key] === '') {
-            document.getElementById('age').classList.add('error');
-            return false;
-        } else if (key === 'age' && formData[key] !== '') {
-            document.getElementById('age').classList.remove('error');
-        }
+    for(let value in formData) {
+      if (formData[value] === '' && value !== 'id') {
+        document.getElementById(`${value}`).classList.add('error');
+        return false
+      } else if (formData[value] !== '' && value !== 'id') {
+        document.getElementById(`${value}`).classList.remove('error');
+      }
     }
+
     return true;
 }
 

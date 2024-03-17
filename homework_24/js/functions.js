@@ -15,9 +15,9 @@ function showUsers(usersList) {
         createElement('div', { className: 'user_name' }, user.name, userRow);
 
         const divButtons = createElement('div', { className: 'user_buttons' }, '', userRow);
-        createElement('input', { type: 'button', value: 'View', 'data-action': 'view' }, '', divButtons);
-        createElement('input', { type: 'button', value: 'Edit', 'data-action': 'edit' }, '', divButtons);
-        createElement('input', { type: 'button', value: 'Delete', 'data-action': 'delete' }, '', divButtons);
+        createElement('input', { type: 'button', value: 'View', 'data-action': 'view', className: 'btn_view' }, '', divButtons);
+        createElement('input', { type: 'button', value: 'Edit', 'data-action': 'edit', className: 'btn_edit' }, '', divButtons);
+        createElement('input', { type: 'button', value: 'Delete', 'data-action': 'delete', className: 'btn_delete' }, '', divButtons);
 
         parent.appendChild(userRow);
     }
@@ -138,19 +138,47 @@ function saveEdit() {
 }
 
 function deleteUser(user) {
-    let confirmation = confirm('Are you sure you want to DELETE the user?');
+    confirmDelete(answer => {
+        if (answer) {
+            let users = JSON.parse(localStorage.getItem('Users list'));
+            let indexToDelete = users.findIndex(u => u.id === user.id);
+            users.splice(indexToDelete, 1);
+            localStorage.setItem('Users list', JSON.stringify(users));
+            document.querySelector('#view').classList.add('hidden');
+            grid.innerHTML = '';
+            showUsers(users);
+        }
+    });
+}
 
-    if (confirmation) {
-        users = JSON.parse(localStorage.getItem('Users list'));
-        let indexToDelete = users.findIndex(u => u.id === user.id);
-    
-        users.splice(indexToDelete, 1);
-    
-        localStorage.setItem('Users list', JSON.stringify(users));
-    
-        document.querySelector('#view').classList.add('hidden');
+function confirmDelete(answer) {
+    const modal = document.createElement('div');
+    modal.setAttribute('id', 'myModal');
+    modal.classList.add('modal');
 
-        grid.innerHTML = '';
-        showUsers(users);
-    }
+    let modalDelete = `
+        <div class="modal-content">
+        <p>Are you sure you want to delete this user?</p>
+        <div class="modal-btns">
+            <button id="btnYes">Yes</button>
+            <button id="btnNo">No</button>
+        </div>
+        </div>
+    `;
+
+    modal.innerHTML = modalDelete;
+    document.body.append(modal);
+    modal.style.display = 'block';
+
+    modal.addEventListener('click', event => {
+        const btnYes = document.getElementById('btnYes');
+        const btnNo = document.getElementById('btnNo');
+        if (event.target === btnYes) {
+            modal.remove();
+            answer(true);
+        } else if (event.target === btnNo) {
+            modal.remove();
+            answer(false);
+        }
+    });
 }
