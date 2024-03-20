@@ -69,10 +69,13 @@ function showUserData(user) {
     document.querySelector('#view').classList.remove('hidden');
     document.querySelector('#view').innerHTML = `
         <div class="view_modal">
-            <p> User name: ${user.name} </p>
-            <p> User login: ${user.login} </p>
-            <p> User email: ${user.email} </p>
-            <p> User age: ${user.age} </p>
+            <p> Name: ${user.name} </p>
+            <p> Login: ${user.login} </p>
+            <p> Password: ${user.password} </p>
+            <p> Email: ${user.email} </p>
+            <p> Phone number: ${user.phoneNumber} </p>
+            <p> Card number: ${user.cardNumber} </p>
+            <p> Age: ${user.age} </p>
             <span class="view_close">X</span>
         </div>
     `;
@@ -97,7 +100,10 @@ function openEdit(user) {
     const form = document.forms.userForm;
     form.elements.name.value = user.name;
     form.elements.login.value = user.login;
+    form.elements.password.value = user.password;
     form.elements.email.value = user.email;
+    form.elements.phoneNumber.value = user.phoneNumber;
+    form.elements.cardNumber.value = user.cardNumber;
     form.elements.age.value = user.age;
 }
 
@@ -108,13 +114,19 @@ function saveEdit() {
     const form = document.forms.userForm;
     const name = form.elements.name.value;
     const login = form.elements.login.value;
+    const password = form.elements.password.value;
     const email = form.elements.email.value;
+    const phoneNumber = form.elements.phoneNumber.value;
+    const cardNumber = form.elements.cardNumber.value;
     const age = form.elements.age.value;
 
     const userData = {
         name,
         login,
+        password,
         email,
+        phoneNumber,
+        cardNumber,
         age
     }
 
@@ -122,7 +134,10 @@ function saveEdit() {
         if (user.id === userID) {
             user.name = userData.name;
             user.login = userData.login;
+            user.password = userData.password;
             user.email = userData.email;
+            user.phoneNumber = userData.phoneNumber;
+            user.cardNumber = userData.cardNumber;
             user.age = userData.age;
         }
     })
