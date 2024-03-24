@@ -1,0 +1,17 @@
+body {
+    padding: 0 20px;
+}
+
+#myInput {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#toggleAlertBtn {
+    display: block;
+    margin-bottom: 30px;
+}
+
+#bootstrapAlert {
+    display: none;
+}
