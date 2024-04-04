@@ -1,0 +1,195 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+header {
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tabs {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tab {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+.tab_active {
+    background-color: #ffd700;
+    border-color: #ffd700;
+}
+
+.tab:hover {
+    background-color: #555;
+}
+
+.container {
+    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.title {
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.card {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 24px;
+    flex-grow: 1;
+}
+
+.logo {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 100%;
+}
+
+button.load-more,
+button.view-btn {
+    background-color: transparent;
+    color: #ffc107;
+    border: 2px solid #ffc107;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.load-more:hover,
+button.view-btn:hover {
+    background-color: #ffc107;
+    color: #000;
+}
+
+button.load-more {
+    display: block;
+    margin: 0 auto;
+}
+
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #121212;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    color: #FFF;
+}
+
+.close {
+    color: #FFF;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff1f1f;
+}
+
+.item-card {
+    text-align: center;
+}
+
+.item-card h2 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 28px;
+    color: #FFE81F;
+    margin-bottom: 10px;
+}
+
+.item-details {
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.item-details span {
+    color: #e0d572;
+}
+
+.active {
+    display: block;
+}
+
+.death_star {
+    position: absolute;
+    width: 700px;
+    top: 250px;
+    right: -260px;
+    z-index: -1;
+}
+
+.death_star img {
+    width: 100%;
+}
+
+.side-decoration {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 265px;
+    height: 100%;
+    z-index: -1;
+    background: url('img/bg.svg') center ;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR WARS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo"><img src="img/logo.svg" alt="logo"></div>
+            <nav>
+                <ul id="tabs">
+                    <li data-tab="characters" class="tab tab_active">Characters</li>
+                    <li data-tab="planets" class="tab">Planets</li>
+                    <li data-tab="starships" class="tab">Starships</li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container active">
+            <h2 class="title">Characters</h2>
+            <div id="characters" class="cards"></div>
+        </div>
+
+        <div class="container">
+            <h2 class="title">Planets</h2>
+            <div id="planets" class="cards"></div>
+        </div>
+
+        <div class="container">
+            <h2 class="title">Starships</h2>
+            <div id="starships" class="cards"></div>
+        </div>
+
+        <div id="myModal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="item-card">
+                    <h2 class="item-name">Name</h2>
+                    <p class="item-details">Description</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-decoration">
+            <div class="decor">
+            </div>
+        </div>
+
+        <div class="death_star">
+            <img src="img/death_star.svg" alt="death_star">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
