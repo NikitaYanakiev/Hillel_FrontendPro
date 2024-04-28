@@ -35,9 +35,9 @@ function loadCards(url, wrapperSelector, type, next) {
         })
 }
 
-loadCards('https://swapi.dev/api/people/', '#characters', 'people');
-loadCards('https://swapi.dev/api/planets/', '#planets', 'planets');
-loadCards('https://swapi.dev/api/starships/', '#starships', 'starships');
+loadCards('https://swapi.py4e.com/api/people/', '#characters', 'people');
+loadCards('https://swapi.py4e.com/api/planets/', '#planets', 'planets');
+loadCards('https://swapi.py4e.com/api/starships/', '#starships', 'starships');
 
 document.querySelectorAll('.cards').forEach(item => {
     item.addEventListener('click', (event) => {
